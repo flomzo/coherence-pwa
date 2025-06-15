@@ -8,29 +8,32 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
-  <h1>Cohérence</h1>
+  <header>
+    <h1>Cohérence</h1>
 
-  <!-- Duration -->
-  <div class="duration-row">
-    <label for="durationInput" class="dur-label">Durée :</label>
-    <input id="durationInput" type="number" min="1" max="20" step="1" value="5" aria-label="Durée en minutes">
-    <span class="unit">minutes</span>
-  </div>
+    <div class="controls">
+      <div class="duration-row">
+        <span class="dur-label">Durée :</span>
+        <input id="durationInput" type="number" min="1" max="20" step="1" value="5" aria-label="Durée en minutes">
+        <span class="unit">minutes</span>
+      </div>
 
-  <!-- Sound switch -->
-  <div class="sound-row">
-    <span class="sound-label">Son</span>
-    <button id="soundToggle" class="switch" role="switch" aria-checked="true" tabindex="0" aria-label="Activer le son">
-      <span class="knob"></span>
-    </button>
-  </div>
+      <div class="sound-row">
+        <span class="sound-label">Son</span>
+        <button id="soundToggle" class="switch" role="switch" aria-checked="true" tabindex="0" aria-label="Activer le son">
+          <span class="knob"></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-  <!-- Breathing circle -->
-  <div id="circle"><span id="countdown" aria-live="polite">05:00</span></div>
+  <main>
+    <div id="circle"><span id="countdown" aria-live="polite">05:00</span></div>
+  </main>
 
-  <button id="toggle" class="primary-btn" aria-label="Démarrer la session">Démarrer</button>
-</main>
+  <footer>
+    <button id="toggle" class="primary-btn">Démarrer</button>
+  </footer>
 
 <script src="app.js" defer></script>
 </body>
