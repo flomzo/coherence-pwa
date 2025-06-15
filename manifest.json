@@ -1,0 +1,9 @@
+{
+  "name": "Coh\u00e9rence Cardiaque",
+  "short_name": "Coh\u00e9rence",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1976D2",
+  "background_color": "#1b1b2f",
+  "icons": []
+}

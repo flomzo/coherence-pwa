@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cohérence cardiaque</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Cohérence</h1>
+
+  <!-- Duration -->
+  <div class="duration-row">
+    <label for="durationInput" class="dur-label">Durée :</label>
+    <input id="durationInput" type="number" min="1" max="20" step="1" value="5" aria-label="Durée en minutes">
+    <span class="unit">minutes</span>
+  </div>
+
+  <!-- Sound switch -->
+  <div class="sound-row">
+    <span class="sound-label">Son</span>
+    <button id="soundToggle" class="switch" role="switch" aria-checked="true" tabindex="0" aria-label="Activer le son">
+      <span class="knob"></span>
+    </button>
+  </div>
+
+  <!-- Breathing circle -->
+  <div id="circle"><span id="countdown" aria-live="polite">05:00</span></div>
+
+  <button id="toggle" class="primary-btn" aria-label="Démarrer la session">Démarrer</button>
+</main>
+
+<script src="app.js" defer></script>
+</body>
+</html>
