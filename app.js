@@ -24,20 +24,19 @@ function showTrial(){
   }
 }
 
-/* Audio Web API */
-let ctx, buf;
-(async()=>{
-  ctx=new (window.AudioContext||webkitAudioContext)();
-  buf=await ctx.decodeAudioData(await fetch('gong.wav').then(r=>r.arrayBuffer()));
-})();
+/* Audio via HTMLAudioElement (fiable PWA) */
+const gongAudio = new Audio('gong.wav');
+gongAudio.preload='auto';
 let soundOn=true;
 function updateSwitch(){ swBtn.setAttribute('aria-checked',soundOn);}
 swBtn.addEventListener('click',()=>{soundOn=!soundOn;updateSwitch();});
 swBtn.addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();soundOn=!soundOn;updateSwitch();}});
 function gong(){
-  if(!soundOn||!buf) return;
-  if(ctx.state==='suspended') ctx.resume();
-  const src=ctx.createBufferSource(); src.buffer=buf; src.connect(ctx.destination); src.start();
+  if(!soundOn) return;
+  try{
+    const a=gongAudio.cloneNode(); // évite couper le son précédent
+    a.play().catch(()=>{});
+  }catch{}
 }
 
 /* Breathing */
@@ -49,7 +48,7 @@ function exhale(){circle.style.transform='scale(1)';gong();exTO=setTimeout(inhal
 /* Countdown */
 let end,tick;
 const pad=n=>n<10?'0'+n:n;
-function clamp(v){return Math.max(1,Math.min(20,Math.round(isNaN(v)?5:v)));}
+const clamp=v=>Math.max(1,Math.min(20,Math.round(isNaN(v)?5:v)));
 function upd(reset=false){
   if(reset){const m=clamp(+input.value);cd.textContent=pad(m)+':00';return;}
   const d=end-Date.now();if(d<=0){stop();return;}
