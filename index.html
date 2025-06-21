@@ -3,34 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ma cohérence</title>
+<title>Cohérence cardiaque</title>
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>Ma cohérence</h1>
-  <div id="trialBanner" class="trial-banner"></div>
-  <div class="controls">
-    <div class="duration-row">
-      <span>Durée :</span>
-      <input id="durationInput" type="number" value="5" min="1" max="20" step="1">
-      <span>minutes</span>
+  <header>
+    <h1>Ma cohérence</h1>
+
+    <div class="controls">
+      <div class="duration-row">
+        <span class="dur-label">Durée :</span>
+        <input id="durationInput" type="number" min="1" max="20" step="1" value="5" aria-label="Durée en minutes">
+        <span class="unit">minutes</span>
+      </div>
+
+      <div class="sound-row">
+        <span class="sound-label">Son</span>
+        <button id="soundToggle" class="switch" role="switch" aria-checked="true" tabindex="0" aria-label="Activer le son">
+          <span class="knob"></span>
+        </button>
+      </div>
     </div>
-    <div class="sound-row">
-      <span>Son</span>
-      <button id="soundToggle" class="switch" role="switch" aria-checked="true" tabindex="0">
-        <span class="knob"></span>
-      </button>
-    </div>
-  </div>
-</header>
-<main>
-  <div id="circle"><span id="countdown" aria-live="polite">05:00</span></div>
-</main>
-<footer>
-  <button id="toggle" class="primary-btn">Démarrer</button>
-</footer>
+  </header>
+
+  <main>
+    <div id="circle"><span id="countdown" aria-live="polite">05:00</span></div>
+  </main>
+
+  <footer>
+    <button id="toggle" class="primary-btn">Démarrer</button>
+  </footer>
+
 <script src="app.js" defer></script>
 </body>
 </html>
