@@ -27,7 +27,7 @@ const pad=n=>n<10?'0'+n:n;
 const clamp=v=>Math.max(1,Math.min(20,Math.round(isNaN(v)?5:v)));
 function upd(reset=false){
   if(reset){const m=clamp(+input.value);cd.textContent=pad(m)+':00';return;}
-  const d=endTime-Date.now();if(d<=0){ finishSession(); return; }
+  const d=endTime-Date.now();if(d<=0){stop();return;}
   const s=Math.round(d/1000);cd.textContent=pad(Math.floor(s/60))+':'+pad(s%60);
 }
 function start(){
@@ -43,18 +43,3 @@ btn.addEventListener('click',()=>running?stop():start());
 window.addEventListener('beforeunload',()=>localStorage.setItem('dur',input.value));
 input.value=localStorage.getItem('dur')||5;upd(true);
 if('serviceWorker'in navigator) navigator.serviceWorker.register('sw.js');
-
-
-
-function finishSession(){
-  clearTimeout(inhTO);
-  clearTimeout(exTO);
-  clearInterval(tickTO);
-  circle.style.transform='scale(1)';
-  running=false;
-  btn.textContent='Démarrer';
-  upd(true);
-  for(let i=0;i<3;i++){
-    setTimeout(gong, i*500);
-  }
-}

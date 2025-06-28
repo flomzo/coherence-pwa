@@ -80,7 +80,7 @@ h1{
   transition:transform .3s;
 }
 .switch[aria-checked="true"] .knob{
-  transform:translateX(125%);
+  transform:translateX(100%);
 }
 
 /* circle */
@@ -139,10 +139,7 @@ footer{
   transition:transform .3s;
 }
 .switch[aria-checked="true"] .knob{
-  transform:translateX(125%);
+  transform:translateX(150%);
 }
-#logo{width:120px;height:auto;margin-top:24px;}
-.sound-icon{font-size:clamp(20px,5vw,32px);color:#fff;}
-
 #logo{width:50vw;max-width:240px;height:auto;margin-top:24px;display:block;margin-left:auto;margin-right:auto;}
-.sound-icon{display:inline-block;vertical-align:middle;}
+.sound-icon{display:inline-block;width:24px;height:24px;background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d='M3 9v6h4l5 5V4L7 9H3z'/><path d='M14.5 12c0-1.77.77-3.29 2-4.29v8.58c-1.23-1-2-2.52-2-4.29z'/></svg>') no-repeat center/contain;}
