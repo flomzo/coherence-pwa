@@ -27,7 +27,7 @@ const pad=n=>n<10?'0'+n:n;
 const clamp=v=>Math.max(1,Math.min(20,Math.round(isNaN(v)?5:v)));
 function upd(reset=false){
   if(reset){const m=clamp(+input.value);cd.textContent=pad(m)+':00';return;}
-  const d=endTime-Date.now();if(diff<=0){ finishSession(); return; }
+  const d=endTime-Date.now();if(d<=0){ finishSession(); return; }
   const s=Math.round(d/1000);cd.textContent=pad(Math.floor(s/60))+':'+pad(s%60);
 }
 function start(){
@@ -53,8 +53,7 @@ function finishSession(){
   circle.style.transform='scale(1)';
   running=false;
   btn.textContent='Démarrer';
-  updateCountdown(true);
-  // Play gong 3 times at 0.5 s interval
+  upd(true);
   for(let i=0;i<3;i++){
     setTimeout(gong, i*500);
   }

@@ -80,7 +80,7 @@ h1{
   transition:transform .3s;
 }
 .switch[aria-checked="true"] .knob{
-  transform:translateX(105%);
+  transform:translateX(125%);
 }
 
 /* circle */
@@ -139,5 +139,5 @@ footer{
   transition:transform .3s;
 }
 .switch[aria-checked="true"] .knob{
-  transform:translateX(105%);
+  transform:translateX(125%);
 }
