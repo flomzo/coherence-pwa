@@ -54,7 +54,7 @@ function finishSession(){
   running=false;
   btn.textContent='Démarrer';
   upd(true);
-  for(let i=0;i<3;i++){
+  for(let i=1;i<3;i++){
     setTimeout(gong, i*2000);
   }
 }
