@@ -9,17 +9,16 @@
 </head>
 <body>
   <header>
-    <h1>Ma cohérence</h1>
+    <img id="logo" src="logo.png" alt="Ma cohérence logo">
 
     <div class="controls">
       <div class="duration-row">
-        <span class="dur-label">Durée :</span>
         <input id="durationInput" type="number" min="1" max="20" step="1" value="5" aria-label="Durée en minutes">
         <span class="unit">minutes</span>
       </div>
 
       <div class="sound-row">
-        <span class="sound-label">Son</span>
+        <span class="sound-icon">🔊</span>
         <button id="soundToggle" class="switch" role="switch" aria-checked="true" tabindex="0" aria-label="Activer le son">
           <span class="knob"></span>
         </button>
@@ -32,7 +31,7 @@
   </main>
 
   <footer>
-    <button id="toggle" class="primary-btn">Démarrer</button>
+    <button id="toggle" class="primary-btn">Start</button>
   </footer>
 
 <script src="app.js" defer></script>

@@ -141,3 +141,5 @@ footer{
 .switch[aria-checked="true"] .knob{
   transform:translateX(125%);
 }
+#logo{width:120px;height:auto;margin-top:24px;}
+.sound-icon{font-size:clamp(20px,5vw,32px);color:#fff;}
