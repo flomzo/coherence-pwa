@@ -55,6 +55,6 @@ function finishSession(){
   btn.textContent='Démarrer';
   upd(true);
   for(let i=0;i<3;i++){
-    setTimeout(gong, i*500);
+    setTimeout(gong, i*1000);
   }
 }
