@@ -143,3 +143,6 @@ footer{
 }
 #logo{width:120px;height:auto;margin-top:24px;}
 .sound-icon{font-size:clamp(20px,5vw,32px);color:#fff;}
+
+#logo{width:50vw;max-width:240px;height:auto;margin-top:24px;display:block;margin-left:auto;margin-right:auto;}
+.sound-icon{display:inline-block;vertical-align:middle;}
