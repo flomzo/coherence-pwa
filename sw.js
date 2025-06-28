@@ -1,4 +1,4 @@
-const CACHE = 'coherence-cache-v2';
+const CACHE = 'coherence-cache-v3';
 const ASSETS = [
   './',
   './index.html',
